@@ -1,0 +1,87 @@
+﻿<Page
+    x:Class="HackApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HackApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF6DC6F0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="pageTitle" Text="LoveLetter" Grid.Column="0" Grid.Row="0" IsHitTestVisible="false" Style="{StaticResource PageHeaderTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,40,0,20" Foreground="#FFFF2588"/>
+        
+        <Grid Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,12,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="文章編輯區" FontSize="30" Foreground="BlanchedAlmond"></TextBlock>
+            <StackPanel Grid.Row="1">
+                
+            <TextBlock Text="輸入對象名字 :  " FontSize="30"></TextBlock>
+            <TextBlock Text="第一次見面地點 :  " FontSize="30"></TextBlock>
+            <TextBlock Text="我最喜歡的食物 :  " FontSize="30"></TextBlock>
+                <TextBlock Text="輸入自己名字 :  " FontSize="30"></TextBlock>
+                <TextBlock Text="天氣 :  " FontSize="30"></TextBlock>
+            
+            <Button  Content="結尾隨機來一句!" Click="btnClick" FontSize="30" Margin="0,10,0,0"></Button>
+                
+            </StackPanel>
+            
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBox x:Name="input1" Margin="10,4,0,0"></TextBox>
+                <TextBox x:Name="input2" Margin="10,4,0,0"></TextBox>
+                <TextBox x:Name="input3" Margin="10,4,0,0"></TextBox>
+                <TextBox x:Name="input4" Margin="10,4,0,0"></TextBox>
+                <ComboBox Margin="10,4,0,0" x:Name="Combo" ItemsSource="{Binding}" />
+                
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="0,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="分享標題:" FontSize="30" Foreground="BlanchedAlmond"></TextBlock>
+                <TextBox x:Name="titleTxtBox" Margin="12,0,0,0"  Text="Love Letter!" FontSize="24"  ></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Margin="0,10,0,0" Orientation="Horizontal">
+                <TextBlock Text="分享描述:" FontSize="30" Foreground="BlanchedAlmond"></TextBlock>
+                <TextBox x:Name="descriptionTxtBox" Margin="12,0,0,0"  Text="這是一封情書。" FontSize="24"  ></TextBox>
+            </StackPanel>
+        </Grid>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="#F2A2CD" BorderThickness="5" Background="#FFFF2588" Margin="0,0,120,0">
+            <StackPanel Grid.Row="1" Grid.Column="1" x:Name="letterTxtStackPanel">
+                <TextBlock x:Name="txt1" Text="{Binding ElementName=input1, Path=Text, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"  FontSize="48" Foreground="#FFDD00"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="txt2a" Text="猶記得我們第一次見面是在" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock x:Name="txt2b" Text="{Binding ElementName=input2, Path=Text, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"  FontSize="30" Foreground="#FFDD00"/>
+                    <TextBlock x:Name="txt2c" Text="。" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="txt3a" Text="你就像" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock x:Name="txt3b" Text="{Binding ElementName=input3, Path=Text, Mode=OneWay}" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="30" Foreground="#FFDD00"/>
+                    <TextBlock x:Name="txt3c" Text="是我生命糧食!" FontSize="30" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+                <TextBlock x:Name="c_txt" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"  FontSize="30"/>
+                <TextBlock x:Name="r_txt" Text="來句完美的結尾吧!" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"  FontSize="30"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="txt4a" Text="   愛你的" FontSize="30"></TextBlock>
+                    <TextBlock x:Name="txt4b" Text="{Binding ElementName=input4, Path=Text, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"  FontSize="30" Foreground="#FFDD00"/>
+                    <TextBlock x:Name="txt4c" Text="  筆" FontSize="30"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
