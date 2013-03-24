@@ -1,2 +1,10 @@
-Loveletter
-==========
+Demo截圖 :
+![](http://github.com/dora0825/Loveletter/raw/master/demo.png)
+
+6小時小小黑克松Template~
+
+1.利用binding textbox textblock可以及時預覽情書內容。
+2.天氣利用下拉式選單放入對應的句子。
+3.結尾利用隨機產生，內建的句子陣列。
+4.結合win 8 分享功能，不過遇到一個問題 : 信件無法自動斷行。
+
